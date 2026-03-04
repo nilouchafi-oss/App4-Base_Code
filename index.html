@@ -112,6 +112,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	//function calculates totals and percentages and prints them to the 
 	//<p id="results"> element on the results page
 		function showResults(){
+			//resetQuiz()
+			//resets stores answer counts so the quiz can be taken again
+			function resetQuiz(){
+				migraine_count=0;
+				tension_count=0;
+				//reset the results text back to the default message
+				document.getElementById("results").innerHTML=
+										"Click the button to see your results.";
 			//total answers 
             var total = migraine_count + tension_count;
 //safety check:prevents divde-by-zero errors
@@ -259,7 +267,7 @@ body {
 
     <br><br>
 	  <!--start over resets page-->
-    <a href="#" class="w3-btn w3-black w3-round">Start Over</a>
+    <a href="#" one click="resetQuiz();" class="w3-btn w3-black w3-round">Start Over</a>
   </div>
 </div>
 	<!--footer-->
