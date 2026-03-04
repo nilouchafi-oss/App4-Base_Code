@@ -32,7 +32,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <!--page title shown here in browser tab-->
 	<title>Migraine or Tension Headache</title>  
 	<!--makes page responsive on mobile devices-->
-]	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--allowed app to behave like a mobile web app-->
 	<meta name="apple-mobile-web-app-capable" content="yes">
 <!--external styling library-->
@@ -116,7 +116,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             var total = migraine_count + tension_count;
 //safety check:prevents divde-by-zero errors
 			if (total===0) { 
-				document.getElementById("results).innerHTML=
+				document.getElementById("results").innerHTML=
 										"no answers recorded yet. Please take the quiz first!";
 				return;
 			}
@@ -128,7 +128,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			if (migraine_count > tension_count) {
 				interpretation = "<b>More consistent with: Migraine</b>";
 			} else if (tension_count > migraine_count) {
-				interpreation = "<b>More consistent with: Tension-type headache</b>";
+				interpretation = "<b>More consistent with: Tension-type headache</b>";
 			} else {
 				interpretation = "<b>Mixed features (could fit either)</b>";
 			}
@@ -179,8 +179,8 @@ body {
 		alt="headache illustration"
 		<style>
        	img, object{
-            	max-height:80%;
-        		max-width:80%;
+            	max-height:70%;
+        		max-width:70%;
         	}
 </style>
  
