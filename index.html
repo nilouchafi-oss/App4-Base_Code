@@ -29,13 +29,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 -->
 	
 <head> 
-	--page title shown here in browser tab--
+<!--page title shown here in browser tab-->
 	<title>Migraine or Tension Headache</title>  
-	--makes page responsive on mobile devices--
+	<!--makes page responsive on mobile devices-->
 ]	<meta name="viewport" content="width=device-width, initial-scale=1">
-	--allowed app to behave like a mobile web app--
+	<!--allowed app to behave like a mobile web app-->
 	<meta name="apple-mobile-web-app-capable" content="yes">
-	--external styling library--
+<!--external styling library-->
 	<link rel="stylesheet" href="w3.css">
 	<link rel="stylesheet" href="w3-colors-flat.css">
 </head> 
@@ -76,13 +76,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<html>
 
 
-   <head> --page title showen here--
+   <head> <!--page title showen here-->
       <title>Cold or Allergies?</title> 
-	   --makes page responsive on mobile devices-
+	 <!--makes page responsive on mobile devices->
       <meta name="viewport" content="width=device-width, initial-scale=1">
-	   --app behaves like a mobile web app--
+	<!--app behaves like a mobile web app-->
       <meta name="apple-mobile-web-app-capable" content="yes">
-	   --external styling libraries from w3.css--
+	   <!--external styling libraries from w3.css-->
       <link rel="stylesheet" href="w3.css">
       <link rel="stylesheet" href="w3-colors-flat.css">
 
@@ -168,11 +168,11 @@ body {
 </style>
    </head> 
 <body>
-	/*header section*/
+	<!--header section-->
 <div id="header" class="w3-container w3-flat-carrot">
 	<h1>Cold or Allergies?</h1>
 </div>
-	/*intro page*/	
+	<!--intro page-->	
 <div id="content" class="w3-container">
 	<p>Not sure what your headache feels most like? Answer a few short questions to see whether your symptoms are more consistent with a migraine or tension-type headahce</p>
 	<img src="https://www.sapnamed.com/wp-content/uploads/2021/03/difference-between-headaches-and-migraines-1200x800.jpg"
@@ -185,14 +185,14 @@ body {
 </style>
  
 >
-		/*button navigates to first question*/	
+		<!--button navigates to first question-->
 	<a href="#one" class="w3-btn w3-black w3-round"> Get Started </a>
-		/*disclaimer*/	
+		<!--disclaimer-->	
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 </div> <!-- adding this because it seems to be missing????? *i dont know what this means* -->
-		/*question 1*/	
+		<!--question 1-->	
 <div class="page" id="one">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 1</h1>
@@ -200,9 +200,9 @@ body {
 	
     	<div id="content" class="w3-container">
         <p>Do you feel nauseous or have a sensitive stomach with the headache?</p>    
-				/*yes=migraine*/
+				<!--yes=migraine-->
 		<a href="#two" onclick="migraineAdd();" class="w3-btn w3-black w3-round">Yes</a>
-				/*no=tension*/
+				<!--no=tension-->
 <a href="#two" onclick="tensionAdd();" class="w3-btn w3-black w3-round">No</a>
     	</div>
 	
@@ -215,9 +215,9 @@ body {
 	
 	<div id="content" class="w3-container">
 		<p>Does bright light or loud sound make your headache noticeable worse?</p>
-		-yes=migraine-
+		<!--yes=migraine-->
 		<a href="#three" onclick="migraineAdd();" class="w3-btn w3-black w3-round">Yes</a>
-		-no=tension-
+		<!--no=tension-->
 <a href="#three" onclick="tensionAdd();" class="w3-btn w3-black w3-round">No</a>
 	</div>
 </div>	
@@ -229,9 +229,9 @@ body {
 
   <div id="content" class="w3-container">
     <p>Is the pain throbbing/pulsing OR mainly on one side of your head?</p>
--yes=migraine-
+<!--yes=migraine-->
     <a href="#four" onclick="migraineAdd();" class="w3-btn w3-black w3-round">Yes</a>
-	  -no=tension-
+	  <!--no=tension-->
     <a href="#four" onclick="tensionAdd();" class="w3-btn w3-black w3-round">No</a>
   </div>
 </div>
@@ -243,9 +243,9 @@ body {
 
   <div id="content" class="w3-container">
     <p>Does it feel like a tight "band" or pressure around your forehead/head?</p>
--yes=tensiony-
+<!--yes=tension-->
     <a href="#resultsPage" onclick="tensionAdd();" class="w3-btn w3-black w3-round">Yes</a>
-	  -no=migraine-
+	  <!--no=migraine-->
     <a href="#resultsPage" onclick="migraineAdd();" class="w3-btn w3-black w3-round">No</a>
   </div>
 </div>
@@ -256,15 +256,15 @@ body {
   </div>
 
   <div id="content" class="w3-container">
-	  -results will be inserted here by Java-
+	  <!--results will be inserted here by Java-->
     <p id="results">Click the button to see your results.</p>
--button runs showResults()-
+<!--button runs showResults()-->
  <button type="button" onclick="showResults();" class="w3-btn w3-black w3-round">
   Show My Results
 </button>
 
     <br><br>
-	  -start over resets page-
+	  <!--start over resets page-->
     <a href="#" class="w3-btn w3-black w3-round">Start Over</a>
   </div>
 </div>
