@@ -112,20 +112,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	//function calculates totals and percentages and prints them to the 
 	//<p id="results"> element on the results page
 		function showResults(){
-			//resetQuiz()
-			//resets stores answer counts so the quiz can be taken again
-			function resetQuiz(){
-				migraine_count=0;
-				tension_count=0;
-				//reset the results text back to the default message
-				document.getElementById("results").innerHTML=
-										"Click the button to see your results.";
 			//total answers 
             var total = migraine_count + tension_count;
 //safety check:prevents divde-by-zero errors
 			if (total===0) { 
 				document.getElementById("results").innerHTML=
-										"no answers recorded yet. Please take the quiz first!";
+										"No answers recorded yet. Please take the quiz first!";
 				return;
 			}
 //convert counts into percentages 
@@ -147,7 +139,15 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
                 "Migraine= " + migrainePercent.toFixed(0) + "% <br>" +
                 "Tension headache = " + tensionPercent.toFixed(0) + "%";
         }
+//resetQuiz()
+	//resets stored answer counts so the quiz can be taken again
+	function resetQuiz(){
+		migraine_count=0;
+		tension_count=0;
 
+		document.getElementById("results").innerHTML=
+										"Click the button to see your results.";
+		
   </script>
 
 
