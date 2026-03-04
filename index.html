@@ -7,7 +7,7 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
 Authors in chronological order of contribution:
 Tim Riedel
-Author 2
+Nilou Chafi
  
 Further Information:
 http://diystream.cns.utexas.edu/
@@ -17,7 +17,7 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+Scroll-based quiz app that stores user responses and calculates a final result. 
  
 Known Issues:
 blah, blah, blah, blah
@@ -29,9 +29,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 -->
 	
 <head> 
-	<title>Hello World</title>  
+	--page title shown here in browser tab--
+	<title>Migraine or Tension Headache</title>  
+	--makes page responsive on mobile devices--
 ]	<meta name="viewport" content="width=device-width, initial-scale=1">
+	--allowed app to behave like a mobile web app--
 	<meta name="apple-mobile-web-app-capable" content="yes">
+	--external styling library--
 	<link rel="stylesheet" href="w3.css">
 	<link rel="stylesheet" href="w3-colors-flat.css">
 </head> 
@@ -69,7 +73,205 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <body>
 	
 	<!-- HERE IS WHERE ALL OF YOUR HTML PAGES GO -->
-	REPLACE THIS TEXT
+	<html>
+
+
+   <head> --page title showen here--
+      <title>Cold or Allergies?</title> 
+	   --makes page responsive on mobile devices-
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+	   --app behaves like a mobile web app--
+      <meta name="apple-mobile-web-app-capable" content="yes">
+	   --external styling libraries from w3.css--
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
+
+
+
+
+<script>
+	// counters for outsomes (store users responses)--
+        var migraine_count = 0;
+        var tension_count = 0;
+
+// migraineAdd()--
+//Called when an answer suggests migraine
+	//adds 1 point to migraine_count
+        function migraineAdd(){
+            migraine_count = migraine_count + 1;
+	
+
+        }
+// tensionAdd()
+	//Called when an answer suggests a tension headache
+	//adds 1 point to tension_count
+        function tensionAdd(){
+            tension_count = tension_count + 1;
+        }
+	//show results()
+	//function calculates totals and percentages and prints them to the 
+	//<p id="results"> element on the results page
+		function showResults(){
+			//total answers 
+            var total = migraine_count + tension_count;
+//safety check:prevents divde-by-zero errors
+			if (total===0) { 
+				document.getElementById("results).innerHTML=
+										"no answers recorded yet. Please take the quiz first!";
+				return;
+			}
+//convert counts into percentages 
+            var migrainePercent = (migraine_count / total) * 100;
+            var tensionPercent = (tension_count / total) * 100;
+//decide which outcome is higher 
+			var interpretation = "";
+			if (migraine_count > tension_count) {
+				interpretation = "<b>More consistent with: Migraine</b>";
+			} else if (tension_count > migraine_count) {
+				interpreation = "<b>More consistent with: Tension-type headache</b>";
+			} else {
+				interpretation = "<b>Mixed features (could fit either)</b>";
+			}
+//display results inside the paragraph with id="results"
+            document.getElementById("results").innerHTML =
+				interpretation + 
+				"<br><br>" +
+                "Migraine= " + migrainePercent.toFixed(0) + "% <br>" +
+                "Tension headache = " + tensionPercent.toFixed(0) + "%";
+        }
+
+  </script>
+
+
+
+<style>	
+/*removes default page margin*/
+body {
+     margin: 0em;
+}
+/*each question page styling*/
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+/*when page is targeted using #id, show it*/
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+   </head> 
+<body>
+	/*header section*/
+<div id="header" class="w3-container w3-flat-carrot">
+	<h1>Cold or Allergies?</h1>
+</div>
+	/*intro page*/	
+<div id="content" class="w3-container">
+	<p>Not sure what your headache feels most like? Answer a few short questions to see whether your symptoms are more consistent with a migraine or tension-type headahce</p>
+	<img src="https://www.sapnamed.com/wp-content/uploads/2021/03/difference-between-headaches-and-migraines-1200x800.jpg"
+		alt="headache illustration"
+		<style>
+       	img, object{
+            	max-height:90%;
+        		max-width:90%;
+        	}
+</style>
+ 
+>
+		/*button navigates to first question*/	
+	<a href="#one" class="w3-btn w3-black w3-round"> Get Started </a>
+		/*disclaimer*/	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+</div> <!-- adding this because it seems to be missing????? *i dont know what this means* -->
+		/*question 1*/	
+<div class="page" id="one">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 1</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Do you feel nauseous or have a sensitive stomach with the headache?</p>    
+				/*yes=migraine*/
+		<a href="#two" onclick="migraineAdd();" class="w3-btn w3-black w3-round">Yes</a>
+				/*no=tension*/
+<a href="#two" onclick="tensionAdd();" class="w3-btn w3-black w3-round">No</a>
+    	</div>
+	
+</div>
+-question 2-
+<div class="page" id="two">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 2</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Does bright light or loud sound make your headache noticeable worse?</p>
+		-yes=migraine-
+		<a href="#three" onclick="migraineAdd();" class="w3-btn w3-black w3-round">Yes</a>
+		-no=tension-
+<a href="#three" onclick="tensionAdd();" class="w3-btn w3-black w3-round">No</a>
+	</div>
+</div>	
+	-question 3-
+<div class="page" id="three">
+  <div class="w3-container w3-flat-carrot">
+    <h1>Question 3</h1>
+  </div>
+
+  <div id="content" class="w3-container">
+    <p>Is the pain throbbing/pulsing OR mainly on one side of your head?</p>
+-yes=migraine-
+    <a href="#four" onclick="migraineAdd();" class="w3-btn w3-black w3-round">Yes</a>
+	  -no=tension-
+    <a href="#four" onclick="tensionAdd();" class="w3-btn w3-black w3-round">No</a>
+  </div>
+</div>
+-question 4-
+<div class="page" id="four">
+  <div class="w3-container w3-flat-carrot">
+    <h1>Question 4</h1>
+  </div>
+
+  <div id="content" class="w3-container">
+    <p>Does it feel like a tight "band" or pressure around your forehead/head?</p>
+-yes=tensiony-
+    <a href="#resultsPage" onclick="tensionAdd();" class="w3-btn w3-black w3-round">Yes</a>
+	  -no=migraine-
+    <a href="#resultsPage" onclick="migraineAdd();" class="w3-btn w3-black w3-round">No</a>
+  </div>
+</div>
+-results page-
+<div class="page" id="resultsPage">
+  <div class="w3-container w3-flat-carrot">
+    <h1>Results</h1>
+  </div>
+
+  <div id="content" class="w3-container">
+	  -results will be inserted here by Java-
+    <p id="results">Click the button to see your results.</p>
+-button runs showResults()-
+ <button type="button" onclick="showResults();" class="w3-btn w3-black w3-round">
+  Show My Results
+</button>
+
+    <br><br>
+	  -start over resets page-
+    <a href="#" class="w3-btn w3-black w3-round">Start Over</a>
+  </div>
+</div>
+	-footer-
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!Nilou Chafi!</p>
+</footer>
 	
 </body>
 </html>
